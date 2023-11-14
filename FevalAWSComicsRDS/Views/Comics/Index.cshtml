@@ -23,6 +23,10 @@
                         asp-route-id="@comic.IdComic" class="btn btn-warning">
                         Details
                     </a>
+                    <a asp-controller="Comics" asp-action="Update"
+                        asp-route-id="@comic.IdComic" class="btn btn-info">
+                        Edit
+                    </a>
                 </td>
             </tr>
         }
