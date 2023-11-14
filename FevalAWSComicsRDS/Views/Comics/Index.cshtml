@@ -6,6 +6,7 @@
         <tr>
             <th>Título</th>
             <th>Imagen</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,12 @@
                 <td>
                     <img src="@comic.Imagen"
                         style="width: 80px; height: 110px"/>
+                </td>
+                <td>
+                    <a asp-controller="Comics" asp-action="Detalles"
+                        asp-route-id="@comic.IdComic" class="btn btn-warning">
+                        Details
+                    </a>
                 </td>
             </tr>
         }

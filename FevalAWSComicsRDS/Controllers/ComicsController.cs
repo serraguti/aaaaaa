@@ -23,5 +23,13 @@ namespace FevalAWSComicsRDS.Controllers
             List<Comic> comics = await this.repo.GetComicsAsync();
             return View(comics);
         }
+
+        //TENDREMOS OTRA VISTA PARA MOSTRAR LOS DETALLES DE UN COMIC
+        //NECESITAMOS EL ID DEL COMIC, LO BUSCAMOS Y LO DEVOLVEMOS
+        public async Task<IActionResult> Detalles(int id)
+        {
+            Comic comic = await this.repo.FindComicAsync(id);
+            return View(comic);
+        }
     }
 }
