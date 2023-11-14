@@ -70,5 +70,14 @@ namespace FevalAWSComicsRDS.Controllers
             //UNA VEZ MODIFICADO, LO ENVIAMOS A LA PAGINA PRINCIPAL
             return RedirectToAction("Index");
         }
+
+        //METODO PARA ELIMINAR QUE RECIBIRA EL ID DE UN COMIC
+        //Y DEVOLVEREMOS LA VISTA A LA PAGINA PRINCIPAL DONDE 
+        //ESTAN TODOS LOS COMICS
+        public async Task<IActionResult> Delete(int id)
+        {
+            await this.repo.DeleteComic(id);
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -27,6 +27,10 @@
                         asp-route-id="@comic.IdComic" class="btn btn-info">
                         Edit
                     </a>
+                    <a asp-controller="Comics" asp-action="Delete"
+                        asp-route-id="@comic.IdComic" class="btn btn-danger">
+                        Delete
+                    </a>
                 </td>
             </tr>
         }
