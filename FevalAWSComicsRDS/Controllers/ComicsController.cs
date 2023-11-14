@@ -31,5 +31,25 @@ namespace FevalAWSComicsRDS.Controllers
             Comic comic = await this.repo.FindComicAsync(id);
             return View(comic);
         }
+
+        //VAMOS A CREAR UNA VISTA CON UN FORMULARIO Y CAJAS DE 
+        //TEXTO PARA PODER INSERTAR UN NUEVO COMIC
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        //CUANDO HACEMOS CLICK SOBRE EL FORMULARIO, ENTRA EN 
+        //ESTE METODO
+        //RECIBIREMOS LOS DATOS DEL PROPIO COMIC
+        [HttpPost]
+        public async Task<IActionResult> Create(Comic comic)
+        {
+            await this.repo.CreateComicAsync(comic.Titulo,
+                comic.Imagen, comic.Descripcion);
+            //PONEMOS UN MENSAJE PARA SABER QUE HA REALIZADO TODO CORRECTO
+            ViewData["MENSAJE"] = "Comic insertado correctamente";
+            return View();
+        }
     }
 }
