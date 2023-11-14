@@ -1,0 +1,23 @@
+﻿@model List<Comic>
+
+<h1 style="color:blue">Comics MySql RDS</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Comic comic in Model)
+        {
+            <tr>
+                <td>@comic.Titulo</td>
+                <td>
+                    <img src="@comic.Imagen"
+                        style="width: 80px; height: 110px"/>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
